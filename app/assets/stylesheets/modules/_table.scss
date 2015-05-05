@@ -1,0 +1,63 @@
+table.index_table {
+  border: 1px solid $skinBorderColor;
+  background: #fff;
+
+  th {
+    background: $skinLightBackgroundColor;
+    border: 1px $skinBorderColor;
+    border-style: none solid solid none;
+    padding: 7px 10px;
+    @include no-shadow;
+    color: $skinTextColor;
+
+    a, a:link, a:visited {
+      color: $skinTextColor;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  td {
+    color: $skinTextTable;
+
+    a, a:link, a:visited {
+      color: $skinTextTable;
+      display: inline-block;
+      padding: 2px 3px;
+      margin: (-2px) 0;
+
+      &:hover {
+        color: #fff;
+        background: $skinActiveColor;
+      }
+    }
+  }
+
+  tr.even td {
+    background: $skinBackgroundColor;
+  }
+}
+
+.attributes_table table th, .attributes_table table td {
+  padding: 10px 0;
+  font-family: $skinFontFamily;
+  color: $skinLabelColor;
+}
+
+.attributes_table table th {
+  font-weight: normal;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.download_links {
+  color: $skinTextTable;
+  font-size: 12px;
+
+  a {
+    color: $skinActiveColor;
+    font-weight: bold;
+  }
+}

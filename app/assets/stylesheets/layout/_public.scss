@@ -1,0 +1,51 @@
+body.logged_out {
+  height: 100%;
+
+  #footer {
+    display: none;
+  }
+
+  #content_wrapper {
+    margin-top: 150px;
+
+    #active_admin_content {
+      padding-bottom: 0;
+    }
+  }
+
+  #login {
+    form fieldset {
+      border: none;
+    }
+
+    > h2 {
+      background: $panelHeaderBck;
+      font-family: $skinFontFamily;
+      color: #fff;
+      @include no-shadow;
+      @include rounded(0);
+      padding: 8px $skinPadding;
+    }
+
+    fieldset.actions {
+      background: $skinLightBackgroundColor;
+      margin: 0 -#{$skinPadding} -17px;
+      padding: 6px $skinPadding;
+    }
+
+    a {
+      margin-top: -25px;
+    }
+  }
+
+  .flash {
+    background: #F2ECBF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: $skinPadding;
+    border-bottom: 1px solid #DEDE8B;
+    text-shadow: none;
+  }
+}

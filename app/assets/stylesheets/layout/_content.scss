@@ -1,0 +1,45 @@
+#active_admin_content {
+  @include clearfix;
+
+  .table_tools {
+    height: $skinPadding;
+  }
+
+  a.table_tools_button, .table_tools .dropdown_menu_button {
+    @include rounded(0);
+    @include no-shadow;
+    color: $skinTextColor;
+    background: #fff;
+    padding: 7px $skinPadding;
+    font-weight: normal;
+    text-shadow: none;
+  }
+
+  .table_tools_segmented_control li {
+    a {
+      @include rounded(0);
+      @include no-shadow;
+      color: $skinTextColor;
+      background: #fff;
+      padding: 7px $skinPadding;
+      font-weight: normal;
+      text-shadow: none;
+      border-color: $skinBorderColor;
+
+      span.count {
+        color: $skinActiveColor;
+      }
+    }
+
+    &.selected {
+      a {
+        color: #fff;
+        background-color: $skinActiveColor;
+
+        span.count {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.sidebar_section.panel {
+  background: #fff;
+  border: 1px solid $skinBorderColor;
+  @include no-shadow;
+  @include rounded(0);
+
+  form .buttons {
+    background: $skinLightBackgroundColor;
+    margin: 25px -15px -15px;
+    padding: 10px $skinPadding;
+  }
+
+  form fieldset {
+    margin-bottom: 0;
+  }
+
+  & > h3 {
+    background: $panelHeaderBck;
+    color: #fff;
+    border: none;
+    margin: 0;
+    padding: 8px $skinPadding;
+    @include no-shadow;
+    @include rounded(0);
+    text-shadow: none;
+    font-weight: bold;
+  }
+
+  .filter_form_field {
+    label {
+      color: $skinLabelColor;
+      font-weight: normal;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-family: $skinFontFamily;
+      padding: 7px 0;
+    }
+  }
+}

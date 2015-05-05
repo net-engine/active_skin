@@ -1,0 +1,18 @@
+.panel {
+  background: #fff;
+  border: 1px solid $skinBorderColor;
+  position: relative;
+  @include no-shadow;
+  @include rounded(0);
+
+  > h3 {
+    background: #f0f4f5;
+    color: $panelHeaderBck;
+    padding: 8px $skinPadding;
+    @include no-shadow;
+    @include rounded(0);
+    text-shadow: none;
+    font-weight: bold;
+    border-style: none none solid;
+  }
+}

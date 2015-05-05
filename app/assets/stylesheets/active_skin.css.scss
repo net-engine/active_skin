@@ -1,0 +1,33 @@
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin,latin-ext);
+
+$skinFontFamily: "Source Sans Pro", "Open Sans", sans-serif !default;
+
+$skinBackgroundColor: #ecf0f1 !default;
+$skinTextColor: #1e2a33 !default;
+$skinTextActiveColor: #fff !default;
+$skinTextTable: #7f8c8d !default;
+$skinActiveColor: #e73c3c !default;
+$skinBorderColor: #d3d8dc !default;
+$skinLabelColor: #95a5a6 !default;
+$skinLightBackgroundColor: #f1f5f6 !default;
+
+$skinHeaderHeight: 40px !default;
+$skinHeaderBck: #1e2a33 !default;
+$skinHeaderBottomBorderWidth: 4px !default;
+$panelHeaderBck: #2c3e50 !default;
+
+$skinLogo: #fff no-repeat center !default;
+$skinLogoWidth: 130px !default;
+$skinPadding: 30px !default;
+
+@import "layout/general";
+@import "layout/header";
+@import "layout/content";
+@import "layout/sidebar";
+@import "layout/footer";
+@import "layout/public";
+
+@import "modules/form";
+@import "modules/pagination";
+@import "modules/panel";
+@import "modules/table";

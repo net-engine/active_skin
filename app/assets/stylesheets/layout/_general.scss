@@ -1,0 +1,30 @@
+html {
+  background: $skinBackgroundColor;
+  font-family: $skinFontFamily;
+  height: 100%;
+  min-height: 100%;
+}
+
+body.active_admin {
+  background: $skinBackgroundColor;
+  font-family: $skinFontFamily;
+  padding-bottom: 80px;
+}
+
+body.logged_in {
+  .flashes {
+    .flash {
+      position: inherit;
+      top: 0;
+      text-shadow: none;
+    }
+  }
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+.blank_slate_container .blank_slate {
+  color: #7f8c8d;
+}

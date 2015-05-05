@@ -1,0 +1,38 @@
+.pagination_information {
+  font-size: 12px;
+  color: $skinTextTable;
+}
+
+.pagination {
+  margin-top: -2px;
+
+  a, span.page.current {
+    font-family: $skinFontFamily;
+    border: 1px solid $skinBorderColor;
+    background: $skinBackgroundColor;
+    @include no-shadow;
+    text-shadow: none;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px 6px;
+    margin-right: 1px;
+  }
+
+  span.page.current,
+  a:not(.disabled):hover {
+    background: $skinActiveColor;
+    color: #fff;
+  }
+
+  span.page.current {
+    font-weight: 600;
+  }
+
+  span.page.current:not(.disabled):hover {
+    background: $skinActiveColor;
+  }
+
+  .page.gap {
+    display: none;
+  }
+}

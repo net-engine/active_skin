@@ -1,0 +1,16 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: $skinPadding $skinPadding;
+  font-size: 13px;
+  color: $skinTextTable;
+  border-top: 1px solid $skinBorderColor;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
