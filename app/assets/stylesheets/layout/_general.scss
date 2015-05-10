@@ -28,3 +28,9 @@ strong, b {
 .blank_slate_container .blank_slate {
   color: #7f8c8d;
 }
+
+form button, form input[type=submit], form input[type=button],
+a.table_tools_button, .table_tools .dropdown_menu_button,
+form.filter_form a.clear_filters_btn {
+  font-family: $skinFontFamily;
+}

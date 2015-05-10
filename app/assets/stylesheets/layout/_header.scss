@@ -117,18 +117,30 @@
     color: #fff;
   }
 
-  .action_items a {
-    @include rounded(0);
-    background: $skinActiveColor;
-    color: #fff;
-    @include no-shadow;
-    text-shadow: none;
-    border: none;
-    padding: 17px;
-    font-size: 14px;
+  .action_items {
+    a {
+      color: #fff;
+      text-shadow: none;
+      border: none;
+      padding: 17px;
+      font-size: 14px;
+      background: $skinActiveColor;
+      @include rounded(0);
+      @include no-shadow;
 
-    &:hover {
-      background: lighten($skinActiveColor, 10%) !important;
+      &:hover {
+        background: lighten($skinActiveColor, 10%) !important;
+        color: white;
+      }
+    }
+
+    span.action_item > a,
+    span.action_item > .dropdown_menu > a {
+      text-shadow: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-color: inherit;
+      font-family: $skinFontFamily;
     }
   }
 }
