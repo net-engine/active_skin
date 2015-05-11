@@ -7,7 +7,7 @@
   form .buttons {
     background: $skinLightBackgroundColor;
     margin: 25px -15px -15px;
-    padding: 10px $skinPadding;
+    padding: ($skinPadding / 2) $skinPadding;
   }
 
   form fieldset {
@@ -19,7 +19,7 @@
     color: #fff;
     border: none;
     margin: 0;
-    padding: 8px $skinPadding;
+    padding: ($skinPadding / 2) $skinPadding;
     @include no-shadow;
     @include rounded(0);
     text-shadow: none;
@@ -34,6 +34,28 @@
       text-transform: uppercase;
       font-family: $skinFontFamily;
       padding: 7px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #active_admin_content #sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 7px;
+    width: auto;
+
+    .sidebar_section.panel {
+      margin: 0;
+    }
+
+    .panel_contents {
+      display: none;
+    }
+
+    &:hover .panel_contents {
+      display: block;
     }
   }
 }

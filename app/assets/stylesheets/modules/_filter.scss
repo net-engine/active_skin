@@ -1,0 +1,42 @@
+form.filter_form {
+  input[type=text], input[type=password], input[type=email],
+  input[type=number], input[type=url], input[type=tel], textarea, select {
+    display: block;
+    width: 100% !important;
+    margin: 0 !important;
+    max-width: 100%;
+  }
+
+  .filter_form_field {
+    &.filter_date_range {
+      position: relative;
+      overflow: hidden;
+
+      .seperator {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        width: 10px;
+        text-align: center;
+        margin-left: -5px;
+      }
+
+      input[type=text] {
+        background-position-y: 8px;
+        width: 46%;
+      }
+    }
+
+    &.select_and_search select,
+    &.select_and_search input[type=text],
+    &.filter_date_range input[type=text] {
+      float: left;
+      width: 48% !important;
+    }
+
+    &.select_and_search input[type=text],
+    &.filter_date_range input[type=text]:last-child {
+      float: right;
+    }
+  }
+}

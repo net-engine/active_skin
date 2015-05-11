@@ -1,16 +1,12 @@
 #active_admin_content {
   @include clearfix;
 
-  .table_tools {
-    height: $skinPadding;
-  }
-
   a.table_tools_button, .table_tools .dropdown_menu_button {
     @include rounded(0);
     @include no-shadow;
     color: $skinTextColor;
     background: #fff;
-    padding: 7px $skinPadding;
+    padding: ($skinPadding / 2) $skinPadding;
     font-weight: normal;
     text-shadow: none;
   }
@@ -21,7 +17,7 @@
       @include no-shadow;
       color: $skinTextColor;
       background: #fff;
-      padding: 7px $skinPadding;
+      padding: ($skinPadding / 2) $skinPadding;
       font-weight: normal;
       text-shadow: none;
       border-color: $skinBorderColor;
@@ -40,6 +36,26 @@
           color: #fff;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    position: relative;
+
+    #main_content_wrapper #main_content {
+      margin: 0;
+    }
+
+    #index_footer {
+      padding: 10px 15px;
+      overflow: hidden;
+    }
+
+    .table_tools {
+      padding: 10px;
+      height: auto;
+      margin-bottom: 0;
     }
   }
 }

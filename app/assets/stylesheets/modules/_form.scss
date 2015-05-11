@@ -8,29 +8,48 @@ a:visited.button {
   color: #fff;
   border: none;
   text-shadow: none;
-  padding: 11px 20px;
+  padding: ($skinPadding / 2) $skinPadding;
 
   &:hover {
     background: lighten($skinActiveColor, 10%) !important;
   }
 }
 
-form fieldset.buttons li.cancel a,
-form fieldset.actions li.cancel a,
-form.filter_form a.clear_filters_btn {
-  background: $skinBackgroundColor;
-  @include no-shadow;
-  @include rounded(0);
-  text-shadow: none;
-  padding: 10px 20px;
-  color: $skinLabelColor;
+.comments form.active_admin_comment fieldset.inputs {
+  border: none;
+}
 
-  &:hover {
-    background: lighten($skinBackgroundColor, 5%) !important;
+.ui-datepicker {
+  .ui-datepicker-header {
+    width: auto !important;
+
+    &:before {
+      display: none !important;
+    }
+  }
+
+  table.ui-datepicker-calendar {
+    width: 100% !important;
+    border: 0;
   }
 }
 
 form {
+  fieldset.buttons li.cancel a,
+  fieldset.actions li.cancel a,
+  &.filter_form a.clear_filters_btn {
+    @include no-shadow;
+    @include rounded(0);
+    text-shadow: none;
+    background: $skinBackgroundColor;
+    padding: ($skinPadding / 2) $skinPadding;
+    color: $skinLabelColor;
+
+    &:hover {
+      background: lighten($skinBackgroundColor, 5%) !important;
+    }
+  }
+
   fieldset.inputs {
     background: #fff;
     border: 1px solid $skinBorderColor;
@@ -69,6 +88,12 @@ form {
       label {
         padding-top: 7px;
         text-transform: uppercase;
+
+        abbr {
+          color: orangered;
+          font-weight: normal;
+          font-size: 14px;
+        }
       }
 
       &.boolean label {
@@ -85,16 +110,58 @@ form {
   input[type=url],
   input[type=tel],
   textarea {
-    @include rounded(0);
     font-family: $skinFontFamily;
-    padding: 5px 10px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    width: 80%;
+    box-sizing: border-box;
   }
-}
 
-form.filter_form .filter_form_field.filter_date_range input[type=text] {
-  background-position: 100% 4px;
-}
+  input[type='number'] {
+    width: auto;
+  }
 
-.comments form.active_admin_comment fieldset.inputs {
-  border: none;
+  select {
+    display: inline-block;
+    height: 31px;
+    border: thin solid;
+    width: auto;
+    max-width: 80%;
+    font-size: 0.95em;
+    border: 1px solid $skinBorderColor;
+  }
+
+  @media screen and (max-width: 768px) {
+    fieldset.inputs {
+      border-left: 0;
+      border-right: 0;
+
+      ol > li label {
+        float: none;
+        width: auto;
+      }
+    }
+
+    fieldset.actions {
+      padding: $skinPadding / 2;
+    }
+
+    fieldset > ol > li {
+      &.boolean label {
+        padding-left: 0;
+      }
+
+      p.inline-hints {
+        margin-left: 0;
+      }
+    }
+
+    input[type=text], input[type=password], input[type=email],
+    input[type=number], input[type=url], input[type=tel],
+    textarea, .note-editor, select, .selectize-control {
+      width: 100% !important;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
 }

@@ -6,10 +6,27 @@ body.logged_out {
   }
 
   #content_wrapper {
-    margin-top: 150px;
+    margin: auto;
+    width: auto;
+    max-width: 500px;
+    padding: 10em 0 4em;
 
     #active_admin_content {
       padding-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-top: 3em;
+
+      #admin_user_remember_me_input {
+        margin-bottom: 1em;
+      }
+
+      #login form fieldset input[type=text],
+      #login form fieldset input[type=email],
+      #login form fieldset input[type=password] {
+        width: 100%;
+      }
     }
   }
 
@@ -24,13 +41,13 @@ body.logged_out {
       color: #fff;
       @include no-shadow;
       @include rounded(0);
-      padding: 8px $skinPadding;
+      padding: ($skinPadding / 2) $skinPadding;
     }
 
     fieldset.actions {
       background: $skinLightBackgroundColor;
       margin: 0 -#{$skinPadding} -17px;
-      padding: 6px $skinPadding;
+      padding: ($skinPadding / 2) $skinPadding;
     }
 
     a {

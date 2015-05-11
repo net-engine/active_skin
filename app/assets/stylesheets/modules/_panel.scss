@@ -8,7 +8,7 @@
   > h3 {
     background: #f0f4f5;
     color: $panelHeaderBck;
-    padding: 8px $skinPadding;
+    padding: ($skinPadding / 2) $skinPadding;
     @include no-shadow;
     @include rounded(0);
     text-shadow: none;

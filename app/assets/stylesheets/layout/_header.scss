@@ -30,56 +30,70 @@
   ul.tabs {
     padding: 0;
     font-size: 0;
-  }
 
-  ul.tabs > li:hover > a, ul.tabs > li.current > a {
-    color: $skinTextActiveColor;
-    background: $skinActiveColor;
-    @include rounded(0);
-    margin: (-10px) 0;
-  }
-
-  ul.tabs > li {
-    font-size: 12px;
-    margin: 0;
-
-    a {
-      padding: 13px 20px;
+    > li {
+      font-size: 12px;
       margin: 0;
-    }
-  }
 
-  ul.tabs > li.has_nested a {
-    background-position: 93% 50%;
-  }
+      a {
+        margin: 0;
+        padding: 14px 20px;
+        border-radius: 0;
+        border-right: thin solid rgba(0, 0, 0, 0.1);
+      }
 
-  ul.tabs > li.has_nested:hover {
-    a {
-      @include rounded(0);
-      background-color: $skinActiveColor;
-      border: none;
-      background-position: 93% 50%;
-    }
+      &:hover > a, &.current > a {
+        color: $skinTextActiveColor;
+        background: $skinActiveColor;
+        margin: (-10px) 0;
+        @include rounded(0);
+      }
 
-    ul {
-      background: $skinActiveColor;
-      @include no-shadow;
-      @include rounded(0);
-      border: none;
+      &.has_nested {
+        a {
+          background-position: 87.5% 50%;
+          padding-right: ($skinPadding * 1.5) !important;
+        }
 
-      li a {
-        color: #fff;
+        &.current a {
+          background-color: $skinActiveColor;
+          background-position: 87.5% 50%;
+        }
 
         &:hover {
-          color: $skinTextColor;
+          a {
+            @include rounded(0);
+            background-color: $skinActiveColor;
+            background-position: 87.5% 50%;
+            border-bottom: 0;
+            border-right-color: transparent;
+          }
+
+          ul {
+            background: $skinActiveColor;
+            @include no-shadow;
+            @include rounded(0);
+            border: none;
+            margin: 0;
+            padding: 0;
+            top: 150%;
+
+            li a {
+              color: #fff;
+              border-top: thin solid darken($skinActiveColor, 5%);
+
+              &:hover {
+                color: $skinTextColor;
+              }
+            }
+
+            li:first-child a {
+              border-top-width: 0;
+            }
+          }
         }
       }
     }
-  }
-
-  ul.tabs > li.has_nested.current a {
-    background-color: $skinActiveColor;
-    background-position: 93% 50%;
   }
 
   #utility_nav {
@@ -95,10 +109,116 @@
       }
     }
 
-    li a {
+    li {
+      a {
+        border-left: thin solid #ddd;
+        border-radius: 0;
+
+        &:hover {
+          background: none;
+          color: $skinTextColor;
+        }
+      }
+
+      &:first-child a {
+        border-left-width: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+
+    .header-item {
+      top: 0;
+    }
+
+    .site_title, #tabs, #utility_nav {
+      float: left;
+      display: block;
+      height: 40px;
+      margin: 0;
+    }
+
+    ul.tabs > li {
+      &:hover > a, &.current > a {
+        margin: 0;
+      }
+
+      a {
+        display: block;
+        line-height: 20px;
+        padding: 10px 15px;
+      }
+    }
+
+    #tabs {
+      width: auto;
+      overflow: hidden;
+      background: $skinActiveColor;
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        border: 5px solid transparent;
+        margin-top: -3px;
+        border-top-color: white;
+        z-index: 200;
+      }
+
+      > li {
+        display: block;
+        background: white;
+        visibility: hidden;
+        white-space: nowrap;
+        min-width: 110px;
+
+        a {
+          padding-right: 20px;
+        }
+
+        &.current {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          visibility: visible;
+          z-index: 100;
+        }
+      }
+
       &:hover {
-        background: none;
-        color: $skinTextColor;
+        padding-right: 0;
+        z-index: 999;
+        overflow: visible;
+        padding-top: 40px;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px black;
+
+        > li {
+          visibility: visible;
+          box-shadow: 0 1px 1px black;
+        }
+
+        ul {
+          left: 100%;
+          top: 0;
+        }
+      }
+    }
+
+    #utility_nav {
+      float: right;
+
+      li {
+        float: left;
+        display: block;
+      }
+
+      #current_user {
+        display: none;
       }
     }
   }

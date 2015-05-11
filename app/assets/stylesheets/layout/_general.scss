@@ -31,6 +31,6 @@ strong, b {
 
 form button, form input[type=submit], form input[type=button],
 a.table_tools_button, .table_tools .dropdown_menu_button,
-form.filter_form a.clear_filters_btn {
+form.filter_form a.clear_filters_btn, .sidebar_section.panel .filter_form_field label {
   font-family: $skinFontFamily;
 }
