@@ -12,7 +12,7 @@ body.logged_out {
     padding: 10em 0 4em;
 
     #active_admin_content {
-      padding-bottom: 0;
+      padding: 0 $skinPadding;
     }
 
     @media screen and (max-width: 768px) {
@@ -41,12 +41,13 @@ body.logged_out {
       color: #fff;
       @include no-shadow;
       @include rounded(0);
+      margin: 0 -#{$skinPadding};
       padding: ($skinPadding / 2) $skinPadding;
     }
 
     fieldset.actions {
       background: $skinLightBackgroundColor;
-      margin: 0 -#{$skinPadding} -17px;
+      margin: $skinPadding -#{$skinPadding} -17px;
       padding: ($skinPadding / 2) $skinPadding;
     }
 
@@ -64,5 +65,9 @@ body.logged_out {
     padding: $skinPadding;
     border-bottom: 1px solid #DEDE8B;
     text-shadow: none;
+
+    + #active_admin_content {
+      margin-top: 3em;
+    }
   }
 }

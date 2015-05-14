@@ -32,12 +32,12 @@
     font-size: 0;
 
     > li {
-      font-size: 12px;
+      font-size: 11px;
       margin: 0;
 
       a {
         margin: 0;
-        padding: 14px 20px;
+        padding: 14px 15px;
         border-radius: 0;
         border-right: thin solid rgba(0, 0, 0, 0.1);
       }
@@ -57,7 +57,7 @@
 
         &.current a {
           background-color: $skinActiveColor;
-          background-position: 87.5% 50%;
+          background-image: none;
         }
 
         &:hover {
@@ -76,6 +76,7 @@
             border: none;
             margin: 0;
             padding: 0;
+            left: 0;
             top: 150%;
 
             li a {
@@ -122,6 +123,30 @@
 
       &:first-child a {
         border-left-width: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    #tabs {
+      > li {
+        display: inline-flex;
+
+        a {
+          border: 0;
+        }
+      }
+    }
+
+    #utility_nav li {
+      display: block;
+
+      a {
+        border: 0;
+      }
+
+      #current_user {
+        margin-bottom: .75em;
       }
     }
   }
@@ -186,6 +211,10 @@
           right: 0;
           visibility: visible;
           z-index: 100;
+
+          a:after {
+            display: none;
+          }
         }
       }
 

@@ -33,7 +33,20 @@
       font-size: 13px;
       text-transform: uppercase;
       font-family: $skinFontFamily;
-      padding: 7px 0;
+      padding: 3px 0;
+
+      &.label, &.label > label {
+        font-size: 1em;
+      }
+    }
+
+    &.filter_check_boxes {
+      padding-top: 2px;
+
+      .choices label {
+        font-size: 1em;
+        padding: 1px 0;
+      }
     }
   }
 }

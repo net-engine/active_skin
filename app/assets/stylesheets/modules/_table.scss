@@ -61,3 +61,10 @@ table.index_table {
     font-weight: bold;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .index_as_table {
+    max-width: 100vw;
+    overflow: scroll;
+  }
+}

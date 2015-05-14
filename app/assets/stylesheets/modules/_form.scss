@@ -59,7 +59,6 @@ form {
     @include rounded(0);
 
     legend {
-      border-bottom: 1px solid $skinBorderColor;
       position: absolute;
       top: 0;
 
@@ -73,6 +72,7 @@ form {
         @include rounded(0);
         text-shadow: none;
         font-weight: bold;
+        border-bottom: 1px solid $skinBorderColor;
       }
     }
 
